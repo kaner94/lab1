@@ -21,3 +21,6 @@ socket.on('data', function(data){
 	console.log("RECEIVED:  %s\n\n", data);
 });
 
+socket.on('error', function(error){
+	console.log("ERROR:  %s\n\n", error.message);
+});
