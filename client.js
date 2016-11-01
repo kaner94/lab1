@@ -19,8 +19,13 @@ socket.connect(PORT, HOST, function(){
 
 socket.on('data', function(data){
 	console.log("RECEIVED:  %s\n\n", data);
+	socket.destroy();
 });
 
 socket.on('error', function(error){
 	console.log("ERROR:  %s\n\n", error.message);
+});
+
+socket.on('close', function(){
+	console.log("Connection closed!");
 });
